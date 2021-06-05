@@ -9,12 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <p class="score"></p>
-        <p class="timer"></p>
-        <h1>Coding Quiz challenge</h1> 
-        <button id="start">Start</button>
+        <p id="score"></p>
+        <p id="timer"></p>
+        <h1>Coding Quiz challenge</h1>         
+        <div id="content">
+            <button id="start" onclick="start()">Start</button>
+        </div>        
         <!--This is where the quiz will be located using javascript-->
-        <p id="questions"></h2>        
+        <div id="questions"></div>
+        <div id="options0"></div>
+        <div id="options1"></div>
+        <div id="options2"></div>
+        <div id="options3"></div>                 
     </div>
     <script src="./script.js"></script>  
 </body>
