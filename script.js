@@ -21,19 +21,18 @@ const question = [
 var i=0;
 var score = 0;
 const wrongAnswer = 5;
-var timeLeft = 15;
-
+var timeLeft = 75;
+//TO DO: Remove starting buttons
 function start(){
-    //timer TODO: change timeLeft value 
-   
-  
+  //remove start button  
     content.innerHTML = "";
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function() {
      if (timeLeft<=0){ //if timer reaches 0 gameover
       console.log(timeLeft)
        clearInterval(timeInterval);
-       timer.innerHTML= "Game Over"; 
+       timer.innerHTML= "Game Over";
+       gameEnd(); 
      }
      else {
         timer.innerHTML= timeLeft + " seconds";
@@ -55,9 +54,7 @@ function start(){
     },1000)
 }
 
-function nextquestion(answer) {
- 
-  
+function nextquestion(answer) {  
   //if selected option is correct then add X to score
   if (answer==question[i].correct){
     alert("correct");
@@ -68,11 +65,14 @@ function nextquestion(answer) {
   else {
     alert("incorrect");
     score --;
-    //TODO: make variable to reduce timer by 5seconds
     timeLeft = (timeLeft-wrongAnswer);
     console.log(timeLeft);
   }
   //increment by 1 array question
   i++;
   console.log(i)
+}
+
+function gameEnd (){
+
 }
