@@ -72,9 +72,12 @@ function nextquestion(answer) {
     timeLeft = (timeLeft-wrongAnswer);
     console.log(timeLeft);
   }
+  if (i<question.length-1)
   //increment by 1 array question
   i++;
-  console.log(i)
+  else {
+    gameEnd();
+  } 
 }
 
 function gameEnd (){
@@ -97,5 +100,15 @@ document.getElementById('submit').addEventListener('click', function(event) {
     // Save email and password to localStorage using `setItem()`
     localStorage.setItem('userinitials', userInitials);
     // Render the last registered email and password
+    HighScore();
   }
 });
+
+function HighScore() {
+  // Retrieve highscore from localStorage using `getItem()`
+  var highscores = localStorage.getItem('userinitials');
+  document.getElementById('showinitials').innerHTML = highscores;
+  //create eventlistener for start again button
+  
+
+}
