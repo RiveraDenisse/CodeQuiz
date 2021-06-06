@@ -8,19 +8,35 @@
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="quizcontainer">
         <p id="score"></p>
         <p id="timer"></p>
         <h1>Coding Quiz challenge</h1>         
         <div id="content">
             <button id="start" onclick="start()">Start</button>
-        </div>        
+        </div>       
         <!--This is where the quiz will be located using javascript-->
         <div id="questions"></div>
+        <div id="optionbutton" class="hide">  
         <button id="options0" onclick="nextquestion('options0')"></button>
         <button id="options1" onclick="nextquestion('options1')"></button>
-        <button id="options2" onclick="nextquestion('options2')"></button>           
+        <button id="options2" onclick="nextquestion('options2')"></button> 
+        </div>      
     </div>
+    <div class="hide" id="results">
+        <h1>Results</h1>
+        <form method="POST">
+            <div class="input-initial">
+              <label for="userinitials">Input Your Initials</label>
+              <input
+                type="text"
+                name="userinitials"
+                id="userinitials"
+              />
+            </div>
+          <button id="submit">Submit</button>
+        </form>
+    </div> 
     <script src="./script.js"></script>  
 </body>
 </html>
