@@ -3,20 +3,27 @@ var timer = document.getElementById('timer');
 var content = document.getElementById('content');
 var questions = document.getElementById('questions');
 var options = document.getElementById('options');
-const question = [ {q: "What does HTML stand for?",
+const question = [ 
+  {q: "What does HTML stand for?",
   option:[ "Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Test Markup Language"],
-  correct: "Hyper Text Markup Language"},
-  { q: "In HTML, onblur and onfocus are:",
-  A: "Event attributes",
-  B: "Style attributes",
-  C: "HTML elements",
-  correct: "Event attributes"}]; 
+  correct: "Hyper Text Markup Language"
+  },
+  {q: "In HTML, onblur and onfocus are:",
+  option:[ "Event attributes", "Style attributes", "HTML elements"],
+  correct: "Event attributes"
+  },
+  {q: "Where in an HTML document is the correct place to refer to an external style sheet?",
+  option:[ "In the <head> section", "In the <body> section", "At the end of the document"],
+  correct: "In the <head> section"
+  },
+  ]; 
+  var i=0;
 //score var
 
 function start(){
     //timer TODO: change timeLeft value 
-    var timeLeft = 5;
-    var i=0;
+    var timeLeft = 15;
+  
     content.innerHTML = "";
     // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
     var timeInterval = setInterval(function() {
@@ -42,27 +49,8 @@ function start(){
      }
      timeLeft--;
     },1000)
-    //quiz start
+}
 
-    //loop while timer is greater than 0
-   
-   
-   
-       
-        
-        
-    
-   // }
-    //function to check response on click
-        //check response
-            //if correct then add points to score
-            //else subtract time and points
-  }
-//function to display high scores and saving
-    //display high score and be able to save initials
-    //give option to try again or clear high scores
-
-
- 
-      
-    //];
+function nextquestion() {
+  i++;
+}
