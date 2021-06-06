@@ -23,22 +23,30 @@
         <button id="options2" onclick="nextquestion('options2')"></button> 
         </div>      
     </div>
-    <div class="hide" id="results">
-        <h1>Results</h1>
-        <h2 id="showinitials"></h2>
-        <form method="POST">
-            <div class="input-initial">
-              <label for="userinitials">Input Your Initials</label>
-              <input
-                type="text"
-                name="userinitials"
-                id="userinitials"
-              />
-            </div>
-          <button id="submit">Submit</button>
-          <button id="again">Try Again!</button>
-        </form>
+    <div class="resultswindow">
+        <div class="hide" id="results">
+            <h1>Results</h1>
+            <form method="POST">
+                <div class="input-initial">
+                    <h2 id="finalscore"></h2>
+                <label for="userinitials">Input Your Initials</label>
+                <input
+                    type="text"
+                    name="userinitials"
+                    id="userinitials"
+                />
+                </div>
+            <button id="submit">Submit</button>
+            </form>
+        </div>
     </div> 
+    <div class="highscorewindow">
+        <div class="hide" id="highscores">
+            <h1>High Score</h1>
+            <h2 id="showinitials"></h2>
+            <button id="again" onclick="reset()">Try Again!</button>
+        </div>
+    </div>
     <script src="./script.js"></script>  
 </body>
 </html>

@@ -4,6 +4,8 @@ var content = document.getElementById('content');
 var questions = document.getElementById('questions');
 var options = document.getElementById('options');
 const option0 = document.getElementById("options0");
+var quizcontainer =document.getElementById("quizcontainer");
+var results =document.getElementById("results");
 const question = [ 
   {q: "What does HTML stand for?",
   option:[ "Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Test Markup Language"],
@@ -21,22 +23,23 @@ const question = [
 var i=0;
 var score = 0;
 const wrongAnswer = 5;
-var timeLeft = 15;
-//score
+var timeLeft = 75;
+var showscore =0;
+var timeInterval;
 let inputInitials = document.getElementById("results");
-//TO DO: Remove starting buttons
-
 
 function start(){
+
+  timeLeft=75;
   document.getElementById('optionbutton').className="";
   //remove start button  
   content.innerHTML = "";
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var timeInterval = setInterval(function() {
+  timeInterval = setInterval(function() {
     //if timer reaches 0 gameover
-    if (timeLeft<=0){ 
+    if (timeLeft==0){ 
       console.log(timeLeft)
-       clearInterval(timeInterval);
+       //clearInterval(timeInterval);
        timer.innerHTML= "Game Over";
        gameEnd(); 
     }
@@ -70,27 +73,29 @@ function nextquestion(answer) {
     alert("incorrect");
     score--;
     timeLeft = (timeLeft-wrongAnswer);
-    console.log(timeLeft);
+    //console.log(timeLeft);
   }
   if (i<question.length-1)
   //increment by 1 array question
   i++;
   else {
-    gameEnd();
+    //timeLeft=0;
+    gameEnd ();
   } 
 }
 
 function gameEnd (){
-  var element =document.getElementById("quizcontainer");
-  element.className="hide";
+  clearInterval(timeInterval);
+  quizcontainer.className="hide";
   document.getElementById('results').className="";
 };
 
 document.getElementById('submit').addEventListener('click', function(event) {
   event.preventDefault();
-
+  showscore = (score*100) + timeLeft;
   var userInitials = document.querySelector('#userinitials').value;
   
+ //console.log(showscore);
   if (userInitials === '') {
     alert("Initials cannot be blank");
   } 
@@ -105,10 +110,22 @@ document.getElementById('submit').addEventListener('click', function(event) {
 });
 
 function HighScore() {
+  //create variable for results section and hide them
+  results.className="hide";
+  document.getElementById('highscores').className="";
   // Retrieve highscore from localStorage using `getItem()`
   var highscores = localStorage.getItem('userinitials');
-  document.getElementById('showinitials').innerHTML = highscores;
-  //create eventlistener for start again button
-  
+  //show initials and score on page
+  document.getElementById('showinitials').innerHTML = highscores +" _score: " + showscore;
+  }
 
-}
+function reset(){
+  results.className="hide";
+  highscores.className="hide";
+  quizcontainer.className="";
+  //reset score and start again
+  score =0;
+  showscore = 0;
+  i=0;
+  start();
+  }
