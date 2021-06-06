@@ -8,7 +8,7 @@ When you first open the page you wil see a title and a button to start the quiz
 *![screenshot](/Assets/startGame.png)
 
 Once you press the start button the quiz will start and a round of questions and options will be shown as well as a timer
-*![screenshot](/Assets/FirstQuestion)
+*![screenshot](/Assets/FirstQuestion.png)
 
 Once the questions are answered or the timer goes to zero the user will be able to submit their initials, the user must submit initials if not an alert window will appear asking to submit initials, if initials are submitted an alert window will show "initials submitted successfully"
 *![screenshot](/Assets/Results.png)
