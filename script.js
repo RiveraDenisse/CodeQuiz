@@ -3,22 +3,23 @@ var timer = document.getElementById('timer');
 var content = document.getElementById('content');
 var questions = document.getElementById('questions');
 var options = document.getElementById('options');
+const option0 = document.getElementById("options0");
 const question = [ 
   {q: "What does HTML stand for?",
   option:[ "Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Test Markup Language"],
-  correct: "Hyper Text Markup Language"
+  correct: "options0"
   },
   {q: "In HTML, onblur and onfocus are:",
   option:[ "Event attributes", "Style attributes", "HTML elements"],
-  correct: "Event attributes"
+  correct: "options0"
   },
   {q: "Where in an HTML document is the correct place to refer to an external style sheet?",
-  option:[ "In the <head> section", "In the <body> section", "At the end of the document"],
-  correct: "In the <head> section"
+  option:[ "In the <body> section", "In the <head> section", "At the end of the document"],
+  correct: "options1"
   },
   ]; 
   var i=0;
-//score var
+var score = 0;
 
 function start(){
     //timer TODO: change timeLeft value 
@@ -51,6 +52,20 @@ function start(){
     },1000)
 }
 
-function nextquestion() {
+function nextquestion(answer) {
   i++;
+  //if selected option is correct then add X to score
+  if (answer==question[i].correct){
+    alert("correct");
+    score ++;
+    console.log (score);
+  }
+   //else -X to score && -5seconds to timerLeft
+  else {
+    alert("incorrect");
+    score --;
+    //TODO: make variable to reduce timer by 5seconds
+    timeLeft --;
+  }
+ 
 }
