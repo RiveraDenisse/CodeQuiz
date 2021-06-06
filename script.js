@@ -7,18 +7,30 @@ const option0 = document.getElementById("options0");
 var quizcontainer =document.getElementById("quizcontainer");
 var results =document.getElementById("results");
 const question = [ 
-  {q: "What does HTML stand for?",
-  option:[ "Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Test Markup Language"],
+  {q: "Inside which HTML element do we put the JavaScript?",
+  option:[ "&ltscript&gt", "&ltjavascript&gt", "&ltscripting&gt"],
   correct: "options0"
   },
-  {q: "In HTML, onblur and onfocus are:",
-  option:[ "Event attributes", "Style attributes", "HTML elements"],
+  {q: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+  option:[ "&ltscript src='xxx.js'&gt", "&ltscript href='xxx.js'&gt", "&ltscript name='xxx.js'&gt"],
   correct: "options0"
   },
-  {q: "Where in an HTML document is the correct place to refer to an external style sheet?",
-  option:[ "In the <body> section", "In the <head> section", "At the end of the document"],
+  {q: "How do you call a function named 'myFunction'?",
+  option:[ "call myFunction()", "myFunction()", "call function myFunction()"],
   correct: "options1"
   },
+  {q: "Where is the correct place to insert a JavaScript?",
+  option:[ "The &ltbody&gt section", "The &lthead&gt section", "Both the &lthead&gt section and the &ltbody&gt section are correct"],
+  correct: "options2"
+  },
+  {q: "How to write an IF statement in JavaScript?",
+  option:[ "if (i==5)", "if i==5 then", "if i=5"],
+  correct: "options0"
+  },
+  {q: "How do you round the number 7.25, to the nearest integer?",
+  option:[ "round(7.25)", "Math.rnd(7.25)", "Math.round(7.25)"],
+  correct: "options2"
+  }
   ]; 
 var i=0;
 var score = 0;
