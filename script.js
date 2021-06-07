@@ -76,13 +76,13 @@ function start(){
 function nextquestion(answer) {  
   //if selected option is correct then add X to score
   if (answer==question[i].correct){
-    alert("correct");
+    //alert("correct");
     score++;
     //console.log (score);
   }
   //else -X to score && -5seconds to timerLeft
   else {
-    alert("incorrect");
+    //alert("incorrect");
     score--;
     timeLeft = (timeLeft-wrongAnswer);
     //console.log(timeLeft);
