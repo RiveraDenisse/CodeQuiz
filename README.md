@@ -1,7 +1,7 @@
 # CodeQuiz
 Week 4 project is to create a quiz on JavaScript fundamentals. The program will give a series of questions and verify answers; if the answer is correct then it will add a point to the score, if the answer is incorrect then it will deduct a point to the score and reduce the timer by 5seconds. If timer goes to zero then the game ends and you can submit your initials. after the initials are submitted your score and initials will be displayed on screen as well as option to try again. 
 
-Link to live website: https://riveradenisse.github.io/genmypassword/
+Link to live website: https://riveradenisse.github.io/CodeQuiz/
 Github : https://github.com/RiveraDenisse/CodeQuiz.git
 
 When you first open the page you wil see a title and a button to start the quiz
